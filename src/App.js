@@ -1,5 +1,5 @@
 import Layout from './Layout'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import { useState } from 'react'
 
 import HomePage from './Pages/HomePage'
@@ -10,7 +10,7 @@ import ErrorPage from './Pages/ErrorPage'
 
 function App() {
 	const [currentPage, setCurrentPage] = useState('Post App')
-	const router = createBrowserRouter([
+	const router = createHashRouter([
 		{
 			path: '/',
 			element: <Layout currentPage={currentPage} />,

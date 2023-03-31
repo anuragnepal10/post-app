@@ -12,7 +12,6 @@ const NewPostPage = ({ setCurrentPage }) => {
 				<input
 					type="text"
 					required
-					autoFocus
 					placeholder="eg: My new App"
 					class="title-input"
 					name="title-input"
