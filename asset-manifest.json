@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/post-app/static/css/main.30da3514.css",
+    "main.js": "/post-app/static/js/main.bcbadaa8.js",
+    "index.html": "/post-app/index.html",
+    "main.30da3514.css.map": "/post-app/static/css/main.30da3514.css.map",
+    "main.bcbadaa8.js.map": "/post-app/static/js/main.bcbadaa8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.30da3514.css",
+    "static/js/main.bcbadaa8.js"
+  ]
+}
