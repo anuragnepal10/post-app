@@ -1,16 +1,22 @@
 import React from 'react'
 import SearchBox from '../SearchBox'
 import PostContainer from '../PostContainer'
-import headerTitle from '../HeaderTitle'
-// import { useLocation } from 'react-router-dom'
+import Header from '../Header'
+import Navbar from '../Navbar'
 
-const HomePage = ({ setCurrentPage, posts, search, setSearch }) => {
-	// const { pathname } = useLocation()
-	// setCurrentPage(headerTitle(pathname))
+const HomePage = ({ posts, search, setSearch }) => {
 	return (
 		<>
-			<SearchBox setSearch={setSearch} search={search} />
-			<PostContainer posts={posts} search={search} />
+			<Header headerTitle={'Post App'} />
+			<main>
+				<SearchBox setSearch={setSearch} search={search} />
+				{posts.length ? (
+					<PostContainer posts={posts} search={search} />
+				) : (
+					<p className="error-message">No Posts Found</p>
+				)}
+			</main>
+			<Navbar currentPage={'home'} />
 		</>
 	)
 }

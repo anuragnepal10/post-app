@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Post = ({ post }) => {
 	return (
-		<Link className="post-card card Link" to="Post/2">
+		<Link className="post-card card Link" to={`post/${post.id}`}>
 			<h2 className="post-card-title">{post.title}</h2>
 			<small className="post-card-date">{post.date}</small>
 			<p className="post-card-body">

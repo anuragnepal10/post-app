@@ -14,19 +14,19 @@ const Navbar = ({ currentPage }) => {
 
 	return (
 		<ul className="nav">
-			<li className={classFinder('Create New Post')}>
+			<li className={classFinder('new')}>
 				<Link className="nav-link" to="/post">
 					<FaPlus className="nav-icon" />
 					<p className="nav-text">New Post</p>
 				</Link>
 			</li>
-			<li className={classFinder('Post App')}>
+			<li className={classFinder('home')}>
 				<Link className="nav-link" to="/">
 					<AiFillHome className="nav-icon" />
 					<p className="nav-text">Home</p>
 				</Link>
 			</li>
-			<li className={classFinder('About')}>
+			<li className={classFinder('about')}>
 				<Link className="nav-link" to="/about">
 					<FaInfoCircle className="nav-icon" />
 					<p className="nav-text">About</p>

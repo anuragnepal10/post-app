@@ -1,12 +1,17 @@
 import React from 'react'
-import headerTitle from '../HeaderTitle'
-import { useLocation } from 'react-router-dom'
+import Header from '../Header'
+import Navbar from '../Navbar'
 
-const ErrorPage = ({ message, setCurrentPage }) => {
-	const { pathname } = useLocation()
-	setCurrentPage(headerTitle(pathname))
-
-	return <p className="error-message">{message}</p>
+const ErrorPage = ({ message }) => {
+	return (
+		<>
+			<Header headerTitle={'Post App'} />
+			<main>
+				<p className="error-message">{message}</p>
+			</main>
+			<Navbar currentPage={'home'} />
+		</>
+	)
 }
 
 export default ErrorPage
