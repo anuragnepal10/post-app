@@ -1,13 +1,26 @@
 import React from 'react'
+import { useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Header from '../Header'
 import Navbar from '../Navbar'
 
-const NewPostPage = () => {
+const NewPostPage = ({ handleSubmit }) => {
+	const titleRef = useRef(null)
+	const bodyRef = useRef(null)
+	const navigate = useNavigate()
 	return (
 		<>
 			<Header headerTitle={'Create New Post'} />
 			<main>
-				<form action="" className="post-form">
+				<form
+					action=""
+					className="post-form"
+					onSubmit={(e) => {
+						e.preventDefault()
+						handleSubmit(titleRef.current.value, bodyRef.current.value)
+						navigate('/')
+					}}
+				>
 					<fieldset className="title">
 						<label htmlFor="title-input">Give your post a title</label>
 						<input
@@ -16,6 +29,7 @@ const NewPostPage = () => {
 							placeholder="eg: My new App"
 							className="title-input"
 							name="title-input"
+							ref={titleRef}
 						/>
 					</fieldset>
 					<fieldset className="body">
@@ -24,6 +38,7 @@ const NewPostPage = () => {
 							required
 							name="body-input"
 							className="body-input card"
+							ref={bodyRef}
 						></textarea>
 					</fieldset>
 					<button className="btn" type="submit">

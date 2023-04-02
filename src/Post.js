@@ -9,7 +9,7 @@ const Post = ({ post }) => {
 			<p className="post-card-body">
 				{post.body.length <= 25
 					? post.body
-					: post.body.split('').slice(0, 25).join('') + '...'}
+					: post.body.split(' ').slice(0, 5).join(' ') + '...'}
 			</p>
 		</Link>
 	)
