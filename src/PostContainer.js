@@ -1,12 +1,12 @@
 import React from 'react'
 import Post from './Post'
 
-const PostContainer = () => {
+const PostContainer = ({ posts, search }) => {
 	return (
 		<section className="post-card-container">
-			<Post />
-			<Post />
-			<Post />
+			{posts.map((post) => (
+				<Post key={post.id} post={post} />
+			))}
 		</section>
 	)
 }
