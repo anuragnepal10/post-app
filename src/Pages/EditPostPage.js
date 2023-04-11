@@ -73,7 +73,7 @@ const EditPostPage = ({
 					<p className="error-message">This Post doesn't exist.</p>
 				)}
 			</main>
-			<Navbar currentPage={'new'} />
+			<Navbar currentPage={'home'} />
 		</>
 	)
 }
