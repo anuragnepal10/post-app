@@ -38,6 +38,8 @@ function App() {
 	)
 	const [search, setSearch] = useState('')
 	const [searchResults, setSearchResults] = useState([])
+	const [editTitle, setEditTitle] = useState('')
+	const [editBody, setEditBody] = useState('')
 
 	const handleDelete = (id) => {
 		const newPosts = posts.filter((post) => post.id !== id)
@@ -55,6 +57,20 @@ function App() {
 			body: body,
 		}
 		const newPosts = [...posts, newPost]
+		setPosts(newPosts)
+		setEditTitle('')
+		setEditBody('')
+	}
+
+	const handleEdit = (id) => {
+		const date = format(new Date(), 'h:mm a - MMM d, yyyy')
+		const editedPost = {
+			id: id,
+			date: date,
+			title: editTitle,
+			body: editBody,
+		}
+		const newPosts = posts.map((post) => (post.id === id ? editedPost : post))
 		setPosts(newPosts)
 	}
 
@@ -86,7 +102,27 @@ function App() {
 		},
 		{
 			path: 'post/:id',
-			element: <PostPage posts={posts} handleDelete={handleDelete} />,
+			element: (
+				<PostPage
+					posts={posts}
+					handleDelete={handleDelete}
+					editTitle={editTitle}
+					editBody={editBody}
+				/>
+			),
+		},
+		{
+			path: 'edit/:id',
+			element: (
+				<EditPostPage
+					posts={posts}
+					editTitle={editTitle}
+					setEditTitle={setEditTitle}
+					editBody={editBody}
+					setEditBody={setEditBody}
+					handleEdit={handleEdit}
+				/>
+			),
 		},
 		{
 			path: 'about',

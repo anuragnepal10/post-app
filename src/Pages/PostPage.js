@@ -6,7 +6,7 @@ import Navbar from '../Navbar'
 const PostPage = ({ posts, handleDelete }) => {
 	const navigate = useNavigate()
 	const { id } = useParams()
-	const post = posts.find((post) => post.id === id.toString())
+	const post = posts.find((post) => post.id === id)
 	return (
 		<>
 			<Header headerTitle={'Post App'} />
@@ -17,15 +17,16 @@ const PostPage = ({ posts, handleDelete }) => {
 						<small className="post-date">{post.date}</small>
 						<p className="post-body">{post.body} </p>
 						<hr />
-						<button
-							className="btn edit-btn"
-							onClick={() => {
-								// handleDelete(post.id)
-								navigate('/')
-							}}
-						>
-							Edit this post
-						</button>
+						<Link to={`/edit/${id}`} className="Link">
+							<button
+								className="btn edit-btn"
+								onClick={() => {
+									// handleDelete(post.id)
+								}}
+							>
+								Edit this post
+							</button>
+						</Link>
 						<button
 							className="btn delete-btn"
 							onClick={() => {
