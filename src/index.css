@@ -212,8 +212,11 @@ hr {
 	margin: 2rem auto;
 }
 
+.edit-btn {
+	margin-bottom: 1rem;
+}
+
 .delete-btn {
-	color: white;
 	background-color: var(--danger-color);
 	margin-bottom: 1rem;
 }

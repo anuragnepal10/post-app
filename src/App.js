@@ -7,6 +7,7 @@ import PostPage from './Pages/PostPage'
 import NewPostPage from './Pages/NewPostPage'
 import AboutPage from './Pages/AboutPage'
 import ErrorPage from './Pages/ErrorPage'
+import EditPostPage from './Pages/EditPostPage'
 
 function App() {
 	const defaultPosts = [
@@ -98,11 +99,9 @@ function App() {
 	])
 
 	return (
-		// <Router>
 		<div className="App">
 			<RouterProvider router={router} />
 		</div>
-		// </Router>
 	)
 }
 
