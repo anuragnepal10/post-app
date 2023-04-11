@@ -50,8 +50,8 @@ h6 {
 
 :root {
 	/* COLOR */
-	--primary-color: hsl(147, 100%, 24%);
-	--primary-color-light: hsl(147, 68%, 55%);
+	--primary-color: hsl(172, 100%, 22%);
+	--primary-color-light: hsl(172, 100%, 40%);
 	--secondary-color: #111;
 	--bg-color: #333;
 	--dark-color: #222;
